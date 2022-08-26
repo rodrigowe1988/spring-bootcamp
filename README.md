@@ -11,10 +11,12 @@ Neste projeto também foram trabalhados tópicos como testes com Junit, integra�
 <img src="images/home-frontend.png"/>
 <img src="images/catalogo-frontend.png"/>
 <img src="images/formulario-usuarios-frontend.png"/>
-<img src="images/modelo-conceitual.png"/>
 <img src="images/produtos-edicao-frontend.png"/>
 <img src="images/produtos-frontend.png"/>
 
+
+## Modelo Conceitual
+<img src="images/modelo-conceitual.png"/>
 
 ## Tecnologias utilizadas
 ### Back end
