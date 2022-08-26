@@ -51,6 +51,7 @@ cd backend
 ## Front end web
 Pré-requisitos: npm / yarn
 
+```
 # clonar repositório
 git clone https://github.com/rodrigowe1988/spring-bootcamp.git
 
@@ -62,6 +63,8 @@ yarn install
 
 # executar o projeto
 yarn start
+```
+
 Autor
 Rodrigo Weber
 
