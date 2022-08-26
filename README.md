@@ -8,6 +8,7 @@ O software consiste em uma aplicação de catálogo de produtos, onde há três 
 
 Neste projeto também foram trabalhados tópicos como testes com Junit, integração com storage de imagens na AWS, além de CI/CD e implantação com Docker e AWS.
 
+<img src="images/catalogo-frontend.png/>
 
 
 ## Tecnologias utilizadas
