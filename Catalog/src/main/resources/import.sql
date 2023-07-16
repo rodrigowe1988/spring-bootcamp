@@ -1,4 +1,4 @@
-INSERT INTO tb_category (name) VALUES ('Books');
+ INSERT INTO tb_category (name) VALUES ('Books');
 INSERT INTO tb_category (name) VALUES ('Electronics');
 INSERT INTO tb_category (name) VALUES ('Computers');
 INSERT INTO tb_category (name) VALUES ('Forniture');
@@ -14,6 +14,10 @@ INSERT INTO tb_category (name) VALUES ('Tables');
 INSERT INTO tb_category (name) VALUES ('Sofas');
 INSERT INTO tb_category (name) VALUES ('Wardrobes');
 INSERT INTO tb_category (name) VALUES ('Beds');
+
+INSERT INTO tb_client (name, cpf, income, birth_date, children) values ('Rodrigo Weber', '11111111111', 10000.00, TIMESTAMP WITH TIME ZONE '1988-01-13T20:50:07.12345Z', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) values ('Rogério Weber', '11111111112', 5000.00, TIMESTAMP WITH TIME ZONE '1994-10-31T20:50:07.12345Z', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) values ('Ana Maria', '11111111113', 2300.00, TIMESTAMP WITH TIME ZONE '2000-07-13T20:50:07.12345Z', 1);
 
 INSERT INTO tb_product (name, price, date, description, img_url) VALUES ('The Lord of the Rings', 90.5, TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/1-big.jpg');
 INSERT INTO tb_product (name, price, date, description, img_url) VALUES ('Smart TV', 2190.0, TIMESTAMP WITH TIME ZONE '2020-07-14T10:00:00Z', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/2-big.jpg');

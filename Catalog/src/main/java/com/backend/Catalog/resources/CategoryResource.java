@@ -21,9 +21,15 @@ public class CategoryResource {
     private CategoryService service;
 
     @GetMapping
-    public ResponseEntity<Page<CategoryDTO>> findAll(Pageable pageable){
+    public ResponseEntity<Page<CategoryDTO>> findAll(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "linesPerPage", defaultValue = "5") Integer linesPerPage,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction,
+            @RequestParam(value = "orderBy", defaultValue = "name") String orderBy
+        ) {
+        PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
 
-        Page<CategoryDTO> list = service.findAllPaged (pageable);
+        Page<CategoryDTO> list = service.findAllPaged(pageRequest);
 
         return ResponseEntity.ok().body(list);
     }
@@ -38,7 +44,7 @@ public class CategoryResource {
     public ResponseEntity<CategoryDTO> insertNewCategory(@RequestBody CategoryDTO dto) {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-               .buildAndExpand(dto.getId()).toUri();
+                .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
 
