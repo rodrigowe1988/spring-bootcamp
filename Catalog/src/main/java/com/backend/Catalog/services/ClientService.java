@@ -11,6 +11,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -35,7 +36,7 @@ public class ClientService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ClientDTO> findAllPaged(PageRequest pageable) {
+    public Page<ClientDTO> findAllPaged(Pageable pageable) {
         Page<Client> list = repository.findAll(pageable);
         return list.map(x -> new ClientDTO(x));
     }

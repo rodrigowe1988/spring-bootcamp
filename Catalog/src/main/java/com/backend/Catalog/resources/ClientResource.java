@@ -26,16 +26,8 @@ public class ClientResource {
     private ClientRepository repository;
 
     @GetMapping
-    public ResponseEntity<Page<ClientDTO>> findAll(
-            @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "linesPerPage", defaultValue = "5") Integer linesPerPage,
-            @RequestParam(value = "direction", defaultValue = "ASC") String direction,
-            @RequestParam(value = "orderBy", defaultValue = "name") String orderBy
-    ) {
-        PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
-
-        Page<ClientDTO> list = service.findAllPaged(pageRequest);
-
+    public ResponseEntity<Page<ClientDTO>> findAll(Pageable pageable) {
+        Page<ClientDTO> list = service.findAllPaged(pageable);
         return ResponseEntity.ok().body(list);
     }
 
