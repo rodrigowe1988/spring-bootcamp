@@ -37,6 +37,8 @@ public class Product implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     Set<Category> categories = new HashSet<>();
 
+    public Product(long l, String phone, String goodPhone, double v, String url, Instant parse) {
+    }
 }
 
 
