@@ -1,8 +1,6 @@
 package com.backend.Catalog.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,10 +8,9 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
+@NoArgsConstructor
+@Data
 @Table(name = "tb_product")
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -37,8 +34,22 @@ public class Product implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     Set<Category> categories = new HashSet<>();
 
+    public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imgUrl = imgUrl;
+        this.date = date;
+    }
+
     public Product(long l, String phone, String goodPhone, double v, String url, Instant parse) {
     }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
 }
 
 
