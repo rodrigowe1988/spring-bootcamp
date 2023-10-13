@@ -9,8 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @Table(name = "tb_product")
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -32,6 +32,8 @@ public class Product implements Serializable {
     @JoinTable(name = "tb_product_category",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     Set<Category> categories = new HashSet<>();
 
     public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
@@ -44,10 +46,6 @@ public class Product implements Serializable {
     }
 
     public Product(long l, String phone, String goodPhone, double v, String url, Instant parse) {
-    }
-
-    public Set<Category> getCategories() {
-        return categories;
     }
 
 }
