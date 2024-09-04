@@ -36,7 +36,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
-        // H2
+        // liberar H2 Console no ambiente de TEST
         if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
             http.headers().frameOptions().disable();
         }

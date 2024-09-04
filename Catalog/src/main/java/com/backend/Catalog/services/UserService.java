@@ -30,7 +30,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserService implements UserDetailsService {
-
     private static Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
