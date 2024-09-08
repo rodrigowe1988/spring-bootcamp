@@ -34,4 +34,7 @@ public class Category implements Serializable {
 
     public Category(long l, String electronics, Instant parse, Instant now) {
     }
+
+    public Category(long l, Object o) {
+    }
 }
